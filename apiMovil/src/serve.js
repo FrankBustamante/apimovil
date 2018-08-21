@@ -22,8 +22,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 // routes
-//app.use(routes);
-app.use('/api',citesRoutes);
+//app.use(routes);var opt = 
+{
+	origin: "*",
+  methods: "HEAD,PUT,PATCH,POST,DELETE",
+  optionsSuccessStatus: 204
+}
+app.use('/api',cors(opt),citesRoutes);
 app.use('/api',histRoutes);
 app.use('/api',recipesRoutes);
 app.use('/api',usersRoutes);
