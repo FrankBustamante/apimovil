@@ -22,7 +22,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 // routes
-//app.use(routes);var opt = 
+//app.use(routes);
+var opt = 
 {
 	origin: "*",
   methods: "HEAD,PUT,PATCH,POST,DELETE",
