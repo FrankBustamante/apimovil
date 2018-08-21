@@ -2,7 +2,7 @@ const router = require('express').Router();
 const mongojs = require('mongojs');
 
 const db = mongojs('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud');
-
+	
 router.get('/user',(req,res, next) =>{
 	db.users.find((err,users)=>{
 		if(err) {
@@ -46,10 +46,14 @@ router.put('/user/:id',(req,res,next)=>{
 	const user = req.body;
 	user._id = mongojs.ObjectId(req.params.id);
 	console.log(user);
-	db.users.update({user},(err,user)=>{
+	
+	db.users.update({_id: mongojs.ObjectId(req.params.id)},{$set: user},(err,user)=>{
 		if(err){
 		 res.status(400).json('error',err);
-		 return next(err);}
+		 console.log(err);
+		 return next(err);
+
+		}
 		res.status(200).json({result:user});
 	})
 })

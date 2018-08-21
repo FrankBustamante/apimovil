@@ -45,8 +45,8 @@ router.delete('/cite/:id',(req,res,next)=>{
 router.put('/cite/:id',(req,res,next)=>{
 	const cite = req.body;
 	cite._id = mongojs.ObjectId(req.params.id);
-	console.log(cite);
-	db.cites.update({cite},(err,cite)=>{
+
+	db.cites.update({_id: mongojs.ObjectId(req.params.id)},{$set: cite},(err,cite)=>{
 		if(err){
 		 res.status(400).json('error',err);
 		 return next(err);}
