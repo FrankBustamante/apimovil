@@ -25,7 +25,7 @@ router.post('/user',(req,res,next)=>{
 
 	if(!user.name || !user.email){
 		res.status(400).json({
-			error:'in user object'
+			error:'in user object', user:user
 		});
 	}else{
 		db.users.save(user, (err,user)=>{
