@@ -3,13 +3,9 @@ const mongojs = require('mongojs');
 const cors = require('cors');
 const db = mongojs('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud');
 const auth =require('../controller/auth')
+const Cite = require('../models/cite')
 
-var opt = 
-	{
-		origin: "*",
-	  methods: "HEAD,PUT,PATCH,POST,DELETE"
-	}
-
+//ALL CITES
 router.get('/cite', auth.isAuth, (req,res, next) =>{
 
 	db.cites.find((err,cites)=>{
@@ -23,12 +19,22 @@ router.get('/cite', auth.isAuth, (req,res, next) =>{
 
 });
 
+//CITE
 router.get('/cite/:id', auth.isAuth, (req,res,next)=>{
 	db.cites.findOne({_id: mongojs.ObjectId(req.params.id)}, (err,cite)=>{
 		if(err) return next(err);
 		res.status(200).json(cite);
 	});
 });
+
+//USER CITES
+router.get('/cite/user/:id',auth.isAuth, (req, res, next) =>{
+	Cite.find({user: req.params.id }, function (err, docs) {
+		if (err) { res.status(500).json({ message : 'Error en el servidor' }) }
+
+		if(docs){ res.status(200).json(docs) }
+	})
+})
 
 router.post('/cite', auth.isAuth, (req,res,next)=>{
 	 var cite = req.body;

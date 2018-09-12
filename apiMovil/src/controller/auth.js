@@ -45,7 +45,6 @@ function decodeToken(token){
 
 
 function signIn(req, res){
-	console.log(`reqpas ${req.body.password} ema ${req.body.email}`)
 	
 	db.users.findOne({ email : req.body.email }, (err,user)=>{
 		
@@ -58,7 +57,14 @@ function signIn(req, res){
        			return res.status(200).json({ 
        				message : 'Logueado correctamente',
        				token : createToken(user),
-       				ok: true
+       				ok: true,
+       				user:{
+       					_id: user._id,
+       					name: user.name, 
+       					lastName: user.lastName,
+       					phone: user.phone,
+       					email: user.email,
+       				}
        			})
        		}
 

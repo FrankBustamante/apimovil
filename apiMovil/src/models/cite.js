@@ -1,0 +1,28 @@
+'use strict'
+
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+const bcrypt = require('bcrypt')
+//const crypto = require('crypto')
+
+const CiteSchema = new mongoose.Schema({
+	date: {type: Date, unique: true},
+	type: String,
+	medic: String,
+	user: String,
+	check: Boolean,
+});
+
+
+CiteSchema.pre('save', (next)=>{
+	let cite = this.CiteSchema()
+
+	console.log(`cite ant: ${cite.type}`)
+	//if(!user.isModified('password')) return next()
+	return next()
+	
+})//http://www.hermosaprogramacion.com/2015/02/android-volley-peticiones-http/
+
+var Cite = mongoose.model('Cite', CiteSchema);
+
+module.exports = Cite;
