@@ -46,4 +46,4 @@ mongoose.connect('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:273
 			return console.log(`error al conectar ${err}`)
 		}
 		console.log(`coneccion a la DB exitosa `)
-	});
+})

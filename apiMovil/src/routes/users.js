@@ -42,7 +42,7 @@ router.post('/user', auth.isAuth, (req,res,next)=>{
 	if(!req.body.name || !req.body.lastName || !req.body.phone || !req.body.email ||
 		!req.body.password){
 		res.status(400).json({
-			error:'in user object'
+			error:'in user object', user:user
 		});
 	}else{
 		var ps
