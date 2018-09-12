@@ -11,10 +11,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.0",
+    "bcrypt-nodejs": "0.0.3",
     "cors": "^2.8.4",
     "ejs": "^2.5.7",
+    "es6-promise": "^4.2.5",
     "express": "^4.16.3",
-    "mongojs": "^2.5.0"
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.22.2",
+    "mongojs": "^2.5.0",
+    "mongoose": "^5.2.9"
   },
   "devDependencies": {
     "nodemon": "^1.17.2"

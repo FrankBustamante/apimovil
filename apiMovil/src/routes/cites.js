@@ -1,26 +1,36 @@
 const router = require('express').Router();
 const mongojs = require('mongojs');
-
+const cors = require('cors');
 const db = mongojs('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud');
+const auth =require('../controller/auth')
 
-router.get('/cite',(req,res, next) =>{
+var opt = 
+	{
+		origin: "*",
+	  methods: "HEAD,PUT,PATCH,POST,DELETE"
+	}
+
+router.get('/cite', auth.isAuth, (req,res, next) =>{
+
 	db.cites.find((err,cites)=>{
 		if(err) {
 			console.log('error: ',err);
 			return next(err);
 		}
-		res.status(200).json(cites);
+
+		res.status(200).json(cites)
 	});
+
 });
 
-router.get('/cite/:id', (req,res,next)=>{
+router.get('/cite/:id', auth.isAuth, (req,res,next)=>{
 	db.cites.findOne({_id: mongojs.ObjectId(req.params.id)}, (err,cite)=>{
 		if(err) return next(err);
 		res.status(200).json(cite);
 	});
 });
 
-router.post('/cite',(req,res,next)=>{
+router.post('/cite', auth.isAuth, (req,res,next)=>{
 	 var cite = req.body;
 
 	if(!cite.pacient || !cite.medic){
@@ -35,14 +45,14 @@ router.post('/cite',(req,res,next)=>{
 	}
 });
 
-router.delete('/cite/:id',(req,res,next)=>{
+router.delete('/cite/:id', auth.isAuth, (req,res,next)=>{
 	db.cites.remove({_id: mongojs.ObjectId(req.params.id)},(err,result)=>{
 		if(err) return next(err);
 		res.json({result:result});
     });
 });
 
-router.put('/cite/:id',(req,res,next)=>{
+router.put('/cite/:id', auth.isAuth, (req,res,next)=>{
 	const cite = req.body;
 	cite._id = mongojs.ObjectId(req.params.id);
 

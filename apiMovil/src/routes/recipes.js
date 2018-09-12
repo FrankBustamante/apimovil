@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const mongojs = require('mongojs');
+//const mongojs = require('mongojs');
+const mongoose = require('mongoose');
 
-const db = mongojs('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud');
-
+//Rutas
 router.get('/recipe',(req,res, next) =>{
 	db.recipes.find((err,recipes)=>{
 		if(err) {

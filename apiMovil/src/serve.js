@@ -3,6 +3,9 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const app = express();
+const mongoose = require('mongoose')
+
+
 
 //const routes = require('./routes/index');
 const usersRoutes = require('./routes/users');
@@ -35,3 +38,12 @@ app.use('/api',usersRoutes);
 app.listen(app.get('port'),()=>{
 	console.log('serve on ',app.get('port'))
 });
+
+//conection mongodb
+mongoose.connect('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud',
+	(err, res)=>{
+		if (err) {
+			return console.log(`error al conectar ${err}`)
+		}
+		console.log(`coneccion a la DB exitosa `)
+	});

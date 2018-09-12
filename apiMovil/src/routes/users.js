@@ -1,61 +1,119 @@
-const router = require('express').Router();
-const mongojs = require('mongojs');
+'use strict'
 
-const db = mongojs('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud');
-	
-router.get('/user',(req,res, next) =>{
-	db.users.find((err,users)=>{
-		if(err) {
-			console.log('error: ',err);
-			return next(err);
-		}
-		res.status(200).json(users);
-	});
-});
+const router = require('express').Router()
 
-router.get('/user/:id', (req,res,next)=>{
-	db.users.findOne({_id: mongojs.ObjectId(req.params.id)}, (err,user)=>{
-		if(err) return next(err);
-		res.status(200).json(user);
-	});
-});
+//const User = mongoose.model('users');
 
-router.post('/user',(req,res,next)=>{
-	 var user = req.body;
+const mongoose = require('mongoose')
+//const conn = mongoose.createConnection('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud');
+const mongojs = require('mongojs')
+const db = mongojs('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud')
+const bcrypt = require('bcrypt')
+const User = require('../models/user')
+const auth =require('../controller/auth')
 
-	if(!user.name || !user.email){
+router.get('/user',auth.isAuth, (req,res, next) =>{
+	User.find({}, function (err, docs) {
+		if (err) { res.status(500).json({ message : 'Error en el servidor' }) }
+
+		if(docs){ res.status(200).json(docs) }
+	})
+})
+
+router.post('/login', (req , res,next)=>{
+	console.log(`reqpas ${req.body.password} ema ${req.body.email}`)
+	auth.signIn(req, res)
+	//res.status(200).json({ message : 'tienes acceso' })	
+})
+
+router.get('/user/:id', auth.isAuth, (req,res,next)=>{
+
+	User.findById(req.params.id, function (err, user) {
+		if (err) { res.status(500).json({ message : 'error en el servidor' }) }
+		
+		if(user){ res.status(200).json(user) }
+    })
+})
+
+//POST
+router.post('/user', auth.isAuth, (req,res,next)=>{
+
+
+	if(!req.body.name || !req.body.lastName || !req.body.phone || !req.body.email ||
+		!req.body.password){
 		res.status(400).json({
 			error:'in user object'
 		});
 	}else{
-		db.users.save(user, (err,user)=>{
-			if(err)return next(err);
-			res.status(200).json(user);
-		});
+		var ps
+		const Usert = new User();
+
+
+		console.log('br '+( bcrypt.genSalt(10, (err, salt)=>{
+			if(err) return next(err)
+
+			return bcrypt.hash(req.body.password, salt, (err, hash)=>{
+				if(err) return next(err)
+
+				Usert.password = hash
+				ps = hash
+				console.log(ps)
+				return hash
+			})
+		})))
+		
+
+
+		
+		
+		Usert.name= req.body.name
+		Usert.lastName = req.body.lastName
+		Usert.phone = req.body.phone
+		Usert.email = req.body.email
+		
+
+		
+		setTimeout(r=>{
+			console.log(`boy ${ps}`)
+			console.log(`userpass ${Usert.password}`)
+			Usert.save((err,users)=>{
+				if(users) res.status(200).json({message : "guardado con exito"})
+				 
+				if(err){
+					console.log("errorr: "+err)
+					res.status(500).json( { message : 'error en el servidor mientras guardaba usuario' })
+				}	
+			})
+		}, 2000)
+		
 	}
-});
+})
 
-router.delete('/user/:id',(req,res,next)=>{
-	db.users.remove({_id: mongojs.ObjectId(req.params.id)},(err,result)=>{
-		if(err) return next(err);
-		res.json({result:result});
-    });
-});
-
-router.put('/user/:id',(req,res,next)=>{
-	const user = req.body;
-	user._id = mongojs.ObjectId(req.params.id);
-	console.log(user);
+router.delete('/user/:id', auth.isAuth, (req,res,next)=>{
 	
-	db.users.update({_id: mongojs.ObjectId(req.params.id)},{$set: user},(err,user)=>{
-		if(err){
-		 res.status(400).json('error',err);
-		 console.log(err);
-		 return next(err);
-
+	User.findById(req.params.id, function (err, user) {
+		if (err) { return res.status(500).json({ message : 'error en el servidor' }) }
+		
+		if(user){
+			user.remove(err=>{
+				//return res.status(500).json({ message : `error en el servidor ${err}` })
+			})
+			return res.status(200).json({ message : "Eliminado" }) 
 		}
-		res.status(200).json({result:user});
+		if(!err && !user) return res.status(400).json({ message : "no existe el usuario" })
+    })
+})
+
+router.put('/user/:id', auth.isAuth, (req,res,next)=>{
+	const user = req.body;
+
+	User.findByIdAndUpdate(req.params.id,user, function(err, user){
+		if(err){ res.status(500).json({ message : `error mientras actualizaba: ${err}` }) }
+		if(user){ res.status(200).json({ message : 'usuario actualizado' }) }
+
+		res.status(400).json({ message : "el usuario no existe" })
 	})
+
 })
 
 module.exports = router;
