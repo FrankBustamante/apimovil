@@ -29,10 +29,11 @@ router.get('/cite/:id', auth.isAuth, (req,res,next)=>{
 
 //USER CITES
 router.get('/cite/user/:id',auth.isAuth, (req, res, next) =>{
-	Cite.find({user: req.params.id }, function (err, docs) {
+	console.log(`id ci ${req.params.id}`)
+	Cite.find({pacient: req.params.id }, function (err, docs) {
 		if (err) { res.status(500).json({ message : 'Error en el servidor' }) }
 
-		if(docs){ res.status(200).json(docs) }
+		if(docs){ res.status(200).json({ cites: docs, ok: true }); console.log(`doc: ${docs}`) }
 	})
 })
 

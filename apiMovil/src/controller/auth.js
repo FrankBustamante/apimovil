@@ -54,6 +54,7 @@ function signIn(req, res){
 		console.log(`s ${user} na ${user.name}`)
 		bcrypt.compare(req.body.password, user.password).then(function(resp) {
        		if (resp) {
+       			console.log(`id DB: ${user._id}`)
        			return res.status(200).json({ 
        				message : 'Logueado correctamente',
        				token : createToken(user),
@@ -80,7 +81,7 @@ function isAuth(req, res, next){
 	}
 
 	const token = req.headers.authorization.split(' ')[1]
-	console.log(`token ${token}`)
+	
 	decodeToken(token)
 		.then(resp =>{
 			req.user = resp
