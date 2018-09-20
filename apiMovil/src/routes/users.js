@@ -20,6 +20,14 @@ router.get('/user',auth.isAuth, (req,res, next) =>{
 	})
 })
 
+router.get('/user/medic', auth.isAuth, (req, res, next) =>{
+		User.find({role: "MEDIC"}, function (err, docs) {
+		if (err) { res.status(500).json({ message : 'Error en el servidor' }) }
+
+		if(docs){ res.status(200).json(docs) }
+	})
+})
+
 router.post('/login', (req , res,next)=>{
 	console.log(`reqpas ${req.body.password} ema ${req.body.email}`)
 	auth.signIn(req, res)
@@ -48,39 +56,27 @@ router.post('/user', auth.isAuth, (req,res,next)=>{
 		var ps
 		const Usert = new User();
 
-
-		console.log('br '+( bcrypt.genSalt(10, (err, salt)=>{
+		bcrypt.genSalt(10, (err, salt)=>{
 			if(err) return next(err)
 
 			return bcrypt.hash(req.body.password, salt, (err, hash)=>{
 				if(err) return next(err)
 
 				Usert.password = hash
-				ps = hash
-				console.log(ps)
-				return hash
 			})
-		})))
-		
+		})
 
-
-		
-		
+		Usert.role = req.body.role
 		Usert.name= req.body.name
 		Usert.lastName = req.body.lastName
 		Usert.phone = req.body.phone
 		Usert.email = req.body.email
-		
-
-		
+				
 		setTimeout(r=>{
-			console.log(`boy ${ps}`)
-			console.log(`userpass ${Usert.password}`)
 			Usert.save((err,users)=>{
 				if(users) res.status(200).json({message : "guardado con exito"})
 				 
 				if(err){
-					console.log("errorr: "+err)
 					res.status(500).json( { message : 'error en el servidor mientras guardaba usuario' })
 				}	
 			})
@@ -107,13 +103,26 @@ router.delete('/user/:id', auth.isAuth, (req,res,next)=>{
 router.put('/user/:id', auth.isAuth, (req,res,next)=>{
 	const user = req.body;
 
-	User.findByIdAndUpdate(req.params.id,user, function(err, user){
-		if(err){ res.status(500).json({ message : `error mientras actualizaba: ${err}` }) }
-		if(user){ res.status(200).json({ message : 'usuario actualizado' }) }
+	if (user.password) {
+		bcrypt.genSalt(10, (err, salt)=>{
+			if(err) return next(err)
 
-		res.status(400).json({ message : "el usuario no existe" })
-	})
+			return bcrypt.hash(user.password, salt, (err, hash)=>{
+				if(err) return next(err)
 
+				user.password = hash
+			})
+		})
+	}
+
+	setTimeout(time =>{
+		User.findByIdAndUpdate(req.params.id,user, function(err, user){
+			if(err){ return res.status(500).json({ message : `error mientras actualizaba: ${err}` }) }
+			if(user){ return res.status(200).json({ message : 'usuario actualizado' }) }
+
+			res.status(400).json({ message : "el usuario no existe" })
+		})		
+	}, 2000)
 })
 
 module.exports = router;

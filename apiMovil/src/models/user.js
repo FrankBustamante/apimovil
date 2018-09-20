@@ -3,6 +3,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
+const enumValues = require('mongoose-enumvalues')  
 //const crypto = require('crypto')
 
 const UserSchema = new mongoose.Schema({
@@ -11,6 +12,11 @@ const UserSchema = new mongoose.Schema({
 	phone: {type: Number , unique: true },
 	email: {type: String, unique: true, lowercase: true},
 	password: String ,
+	role: {
+	    type: String,
+	    enum: ['ADMIN', 'USER', 'MEDIC'],
+	    default: 'USER'
+    },
 	signupDate: {type: Date, defalut: Date.now()},
 	lastLogin: Date
 });
