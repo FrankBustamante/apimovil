@@ -16,8 +16,8 @@ const recipesRoutes = require('./routes/recipes');
 // settings
 //app.set('views', path.join(__dirname, 'views'));
 app.set('port', process.env.PORT || 3000);
-//app.engine('html', require('ejs').renderFile);
-//app.set('view engines','ejs');
+app.engine('html', require('ejs').renderFile);
+app.set('view engines','ejs');
 
 // middlewares
 app.use(cors());
@@ -32,7 +32,7 @@ app.use('/api',recipesRoutes);
 app.use('/api',usersRoutes);
 
 // static files
-//app.use(express.static(path.join(__dirname,'dist')));
+app.use(express.static(path.join(__dirname,'dist/client')));
 
 // star serve
 app.listen(app.get('port'),()=>{
