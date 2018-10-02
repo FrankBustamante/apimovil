@@ -9,7 +9,7 @@ const CiteSchema = new mongoose.Schema({
 	date: {type: Date, unique: true},
 	type: String,
 	medic: String,
-	user: String,
+	pacient: String,
 	check: Boolean,
 });
 

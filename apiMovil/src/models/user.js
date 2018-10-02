@@ -17,6 +17,7 @@ const UserSchema = new mongoose.Schema({
 	    enum: ['ADMIN', 'USER', 'MEDIC'],
 	    default: 'USER'
     },
+    doc: String,
 	signupDate: {type: Date, defalut: Date.now()},
 	lastLogin: Date
 });
