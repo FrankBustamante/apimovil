@@ -39,7 +39,7 @@ app.listen(app.get('port'),()=>{
 	console.log('serve on ',app.get('port'))
 });
 
-//conection mongodb
+conection mongodb
 mongoose.connect('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud',
 	(err, res)=>{
 		if (err) {
@@ -47,3 +47,12 @@ mongoose.connect('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:273
 		}
 		console.log(`coneccion a la DB exitosa `)
 })
+
+
+// mongoose.connect('mongodb://hackaton_med:rappi.ruiz.mongo-hackathon.eastus2.cloudapp.azure.com/db_salud',
+//  	(err, res)=>{
+//  		if (err) {
+//  			return console.log(`error al conectar ${err}`)
+//  		}
+//  		console.log(`coneccion a la DB exitosa `)
+//  })
