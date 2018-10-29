@@ -39,7 +39,7 @@ app.listen(app.get('port'),()=>{
 	console.log('serve on ',app.get('port'))
 });
 
-conection mongodb
+//conection mongodb
 mongoose.connect('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud',
 	(err, res)=>{
 		if (err) {
