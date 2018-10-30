@@ -46,7 +46,6 @@ router.get('/user/:id', auth.isAuth, (req,res,next)=>{
 //POST
 router.post('/user', auth.isAuth, (req,res,next)=>{
 
-
 	if(!req.body.name || !req.body.lastName || !req.body.phone || !req.body.email ||
 		!req.body.password){
 		res.status(400).json({
@@ -81,8 +80,7 @@ router.post('/user', auth.isAuth, (req,res,next)=>{
 					res.status(500).json( { message : 'error en el servidor mientras guardaba usuario' })
 				}	
 			})
-		}, 2000)
-		
+		}, 2000)	
 	}
 })
 
