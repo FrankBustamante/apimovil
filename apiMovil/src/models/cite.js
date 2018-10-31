@@ -6,10 +6,16 @@ const bcrypt = require('bcrypt')
 //const crypto = require('crypto')
 
 const CiteSchema = new mongoose.Schema({
-	date: {type: Date, unique: true},
+	date: {type: String},
 	type: String,
-	medic: String,
-	pacient: String,
+	medic: {
+		name: String,
+		_id: String
+	},
+	pacient: {
+		name : String,
+		_id : String
+	},
 	check: Boolean,
 });
 

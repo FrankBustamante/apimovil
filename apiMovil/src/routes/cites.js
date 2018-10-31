@@ -37,6 +37,7 @@ router.get('/cite/user/:id',auth.isAuth, (req, res, next) =>{
 	})
 })
 
+//POST CITES USER
 router.post('/cite', auth.isAuth, (req,res,next)=>{
 	 var cite = req.body;
 
@@ -45,6 +46,10 @@ router.post('/cite', auth.isAuth, (req,res,next)=>{
 			error:'in cite object'
 		});
 	}else{
+		
+		cite.medic.name = req.body.medic.name.split(" ")[0]
+		cite.medic._id = req.body.medic.name.split(" ")[1]
+		
 		db.cites.save(cite, (err,cite)=>{
 			if(err)return next(err);
 			res.status(200).json(cite);
