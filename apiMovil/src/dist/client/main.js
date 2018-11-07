@@ -702,7 +702,7 @@ var CitesService = /** @class */ (function () {
         this.http = http;
         this.urlApi = "https://api-movil.herokuapp.com/api/cite";
         this.urlLocal = "http://localHost:3000/api/cite";
-        this.url = this.urlLocal;
+        this.url = this.urlApi;
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({ 'authorization': "Bearer " + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].TOKEN, 'Content-Type': 'application/json', 'Accept': 'application/json' })
         };
@@ -776,7 +776,7 @@ var UserService = /** @class */ (function () {
         this.http = http;
         this.urlApi = "https://api-movil.herokuapp.com/api/user";
         this.urlLocal = "http://localHost:3000/api/user";
-        this.url = this.urlLocal;
+        this.url = this.urlApi;
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({ 'authorization': "Bearer " + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].TOKEN,
                 'Content-Type': 'application/json', 'Accept': 'application/json' })
