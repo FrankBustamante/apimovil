@@ -19,7 +19,13 @@ const UserSchema = new mongoose.Schema({
     },
     doc: String,
 	signupDate: {type: Date, defalut: Date.now()},
-	lastLogin: Date
+	lastLogin: Date,
+	horarios:[
+		{
+			fecha:String,
+			hora:String
+		}
+	]
 });
 
 
