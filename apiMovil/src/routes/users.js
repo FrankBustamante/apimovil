@@ -71,6 +71,7 @@ router.post('/user', auth.isAuth, (req,res,next)=>{
 		Usert.phone = req.body.phone
 		Usert.email = req.body.email
 		Usert.doc = req.body.doc
+		Usert.horarios = req.body.horarios
 				
 		setTimeout(r=>{
 			Usert.save((err,users)=>{
