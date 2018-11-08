@@ -65,6 +65,7 @@ function signIn(req, res){
        					lastName: user.lastName,
        					phone: user.phone,
        					email: user.email,
+					role: user.role,
        				}
        			})
        		}
