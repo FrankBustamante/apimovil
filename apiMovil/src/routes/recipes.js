@@ -16,7 +16,7 @@ router.get('/recipe',(req,res, next) =>{
 });
 
 router.get('/recipe/:id', (req,res,next)=>{
-	db.recipes.findOne({"client._id":(req.params.id)}, (err,recipe)=>{
+	db.recipes.findOne({"pacient._id":(req.params.id)}, (err,recipe)=>{
 		if(err) return next(err);
 		res.status(200).json(recipe);
 	});
