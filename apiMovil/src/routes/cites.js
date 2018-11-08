@@ -37,6 +37,15 @@ router.get('/cite/user/:id',auth.isAuth, (req, res, next) =>{
 	})
 })
 
+router.get('/cite/medic/:id',auth.isAuth, (req, res, next) =>{
+	console.log(`id ci ${req.params.id}`)
+	Cite.find({"medic._id": req.params.id }, function (err, docs) {
+		if (err) { res.status(500).json({ message : 'Error en el servidor' }) }
+
+		if(docs){ res.status(200).json({ cites: docs, ok: true }); console.log(`doc: ${docs}`) }
+	})
+})
+
 //POST CITES USER
 router.post('/cite', auth.isAuth, (req,res,next)=>{
 	 var cite = req.body;
@@ -46,9 +55,10 @@ router.post('/cite', auth.isAuth, (req,res,next)=>{
 			error:'in cite object'
 		});
 	}else{
-		
+		console.log(req.body.medic.name +'  ' +cite)
 		cite.medic.name = req.body.medic.name.split(" ")[0]
-		cite.medic._id = req.body.medic.name.split(" ")[1]
+		cite.medic._id = req.body.medic._id
+		console.log('medico ¿'+cite.medic._id +'   '+req.body.medic._id)
 		
 		db.cites.save(cite, (err,cite)=>{
 			if(err)return next(err);

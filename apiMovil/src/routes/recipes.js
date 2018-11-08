@@ -1,6 +1,8 @@
 const router = require('express').Router();
-//const mongojs = require('mongojs');
+const mongojs = require('mongojs');
+
 const mongoose = require('mongoose');
+const db = mongojs('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:27352/db_salud');
 
 //Rutas
 router.get('/recipe',(req,res, next) =>{
@@ -23,11 +25,12 @@ router.get('/recipe/:id', (req,res,next)=>{
 router.post('/recipe',(req,res,next)=>{
 	 var recipe = req.body;
 
-	if(!recipe.pacient || !recipe.medic){
+	if(false){
 		res.status(400).json({
 			error:'in recipe object'
 		});
 	}else{
+		console.log(recipe)
 		db.recipes.save(recipe, (err,recipe)=>{
 			if(err)return next(err);
 			res.status(200).json(recipe);

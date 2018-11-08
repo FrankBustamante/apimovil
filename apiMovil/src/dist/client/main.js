@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div *ngIf=\"!isLog\" class=\"limiter\">\n\t\t<div class=\"container-login100\">\n\t\t\t<div class=\"login100-more\" style=\"background-image: url('images/bg-01.jpg');\"></div>\n\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50\">\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-59\">\n\t\t\t\t\t\tIniciar sesion\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input\" data-validate = \"Valid email is required: ex@abc.xyz\">\n\t\t\t\t\t\t<span class=\"label-input100\">Email</span>\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"email\" name=\"email\" [(ngModel)]=\"email\" placeholder=\"Email addess...\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"wrap-input100 validate-input\" data-validate = \"Password is required\">\n\t\t\t\t\t\t<span class=\"label-input100\">Password</span>\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" [(ngModel)]=\"pass\" placeholder=\"*************\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"container-login100-form-btn\">\n\t\t\t\t\t\t<div class=\"wrap-login100-form-btn\">\n\t\t\t\t\t\t\t<div class=\"login100-form-bgbtn\"></div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<button  (click)=\"logIn()\" class=\"dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30\">\n\t\t\t\t\t\t\tSign in\n\t\t\t\t\t\t\t<i class=\"fa fa-long-arrow-right m-l-5\"></i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n</div>\n\n<div *ngIf=\"isLog\" >\n   <nav class=\"navbar navbar-expand navbar-dark bg-dark static-top\">\n\n      <a class=\"navbar-brand mr-1\" href=\"index.html\">Start Bootstrap</a>\n\n      <button class=\"btn btn-link btn-sm text-white order-1 order-sm-0\" id=\"sidebarToggle\" href=\"#\">\n        <i class=\"fas fa-bars\"></i>\n      </button>\n\n      <!-- Navbar Search -->\n      <form class=\"d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0\">\n        <div class=\"input-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Search for...\" aria-label=\"Search\" aria-describedby=\"basic-addon2\">\n          <div class=\"input-group-append\">\n            <button class=\"btn btn-primary\" type=\"button\">\n              <i class=\"fas fa-search\"></i>\n            </button>\n          </div>\n        </div>\n      </form>\n\n      <!-- Navbar -->\n      <ul class=\"navbar-nav ml-auto ml-md-0\">\n        <li class=\"nav-item dropdown no-arrow mx-1\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fas fa-bell fa-fw\"></i>\n            <span class=\"badge badge-danger\">9+</span>\n          </a>\n          <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"alertsDropdown\">\n            <a class=\"dropdown-item\" href=\"#\">Action</a>\n            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n          </div>\n        </li>\n        <li class=\"nav-item dropdown no-arrow mx-1\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"messagesDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fas fa-envelope fa-fw\"></i>\n            <span class=\"badge badge-danger\">7</span>\n          </a>\n          <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"messagesDropdown\">\n            <a class=\"dropdown-item\" href=\"#\">Action</a>\n            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n          </div>\n        </li>\n        <li class=\"nav-item dropdown no-arrow\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fas fa-user-circle fa-fw\"></i>\n          </a>\n          <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"userDropdown\">\n            <a class=\"dropdown-item\" href=\"#\">Settings</a>\n            <a class=\"dropdown-item\" href=\"#\">Activity Log</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" href=\"#\" data-toggle=\"modal\" data-target=\"#logoutModal\">Logout</a>\n          </div>\n        </li>\n      </ul>\n\n    </nav>\n\n    <div id=\"wrapper\">\n\n      <!-- Sidebar -->\n      <ul class=\"sidebar navbar-nav\">\n        <li class=\"nav-item active\">\n          <a class=\"nav-link\" href=\"index.html\">\n            <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n            <span>Dashboard</span>\n          </a>\n        </li>\n        <li class=\"nav-item dropdown show\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"pagesDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            <i class=\"fas fa-fw fa-folder\"></i>\n            <span>Pages</span>\n          </a>\n          <div class=\"dropdown-menu show\" aria-labelledby=\"pagesDropdown\">\n            <h6 class=\"dropdown-header\">Usuarios</h6>\n            <a class=\"dropdown-item\" routerLink=\"/users\" routerLinkActive=\"active\">ver todos</a>\n            <a class=\"dropdown-item\" routerLink=\"/newU\" routerLinkActive=\"active\">Registrar</a>\n             <h6 class=\"dropdown-header\">Citas</h6>\n             <a class=\"dropdown-item\" routerLink=\"/cites\" routerLinkActive=\"active\">Ver todas</a>\n          </div>\n        </li><!-- \n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"charts.html\">\n            <i class=\"fas fa-fw fa-chart-area\"></i>\n            <span>Charts</span></a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"tables.html\">\n            <i class=\"fas fa-fw fa-table\"></i>\n            <span>Tables</span></a>\n        </li> -->\n      </ul>\n      <router-outlet></router-outlet>\n</div>\n\t\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div *ngIf=\"!isLog\" class=\"limiter\">\n\t\t<div class=\"container-login100\">\n\t\t\t<div class=\"login100-more\" style=\"background-image: url('images/bg-01.jpg');\"></div>\n\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50\">\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-59\">\n\t\t\t\t\t\tIniciar sesion\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input\" data-validate = \"Valid email is required: ex@abc.xyz\">\n\t\t\t\t\t\t<span class=\"label-input100\">Email</span>\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"email\" name=\"email\" [(ngModel)]=\"email\" placeholder=\"Email addess...\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"wrap-input100 validate-input\" data-validate = \"Password is required\">\n\t\t\t\t\t\t<span class=\"label-input100\">Password</span>\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" [(ngModel)]=\"pass\" placeholder=\"*************\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"container-login100-form-btn\">\n\t\t\t\t\t\t<div class=\"wrap-login100-form-btn\">\n\t\t\t\t\t\t\t<div class=\"login100-form-bgbtn\"></div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<button  (click)=\"logIn()\" class=\"dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30\">\n\t\t\t\t\t\t\tSign in\n\t\t\t\t\t\t\t<i class=\"fa fa-long-arrow-right m-l-5\"></i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n</div>\n\n<div *ngIf=\"isLog\" >\n   <nav class=\"navbar navbar-expand navbar-dark bg-dark static-top\">\n\n      <a class=\"navbar-brand mr-1\" href=\"index.html\">Start Bootstrap</a>\n\n      <button class=\"btn btn-link btn-sm text-white order-1 order-sm-0\" id=\"sidebarToggle\" href=\"#\">\n        <i class=\"fas fa-bars\"></i>\n      </button>\n\n      <!-- Navbar Search -->\n      <form class=\"d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0\">\n        <div class=\"input-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Search for...\" aria-label=\"Search\" aria-describedby=\"basic-addon2\">\n          <div class=\"input-group-append\">\n            <button class=\"btn btn-primary\" type=\"button\">\n              <i class=\"fas fa-search\"></i>\n            </button>\n          </div>\n        </div>\n      </form>\n\n      <!-- Navbar -->\n      <ul class=\"navbar-nav ml-auto ml-md-0\">\n        <li class=\"nav-item dropdown no-arrow mx-1\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fas fa-bell fa-fw\"></i>\n            <span class=\"badge badge-danger\">9+</span>\n          </a>\n          <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"alertsDropdown\">\n            <a class=\"dropdown-item\" href=\"#\">Action</a>\n            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n          </div>\n        </li>\n        <li class=\"nav-item dropdown no-arrow mx-1\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"messagesDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fas fa-envelope fa-fw\"></i>\n            <span class=\"badge badge-danger\">7</span>\n          </a>\n          <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"messagesDropdown\">\n            <a class=\"dropdown-item\" href=\"#\">Action</a>\n            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n          </div>\n        </li>\n        <li class=\"nav-item dropdown no-arrow\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fas fa-user-circle fa-fw\"></i>\n          </a>\n          <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"userDropdown\">\n            <a class=\"dropdown-item\" href=\"#\">Settings</a>\n            <a class=\"dropdown-item\" href=\"#\">Activity Log</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" href=\"#\" data-toggle=\"modal\" data-target=\"#logoutModal\">Logout</a>\n          </div>\n        </li>\n      </ul>\n\n    </nav>\n\n    <div id=\"wrapper\">\n\n      <!-- Sidebar -->\n      <ul class=\"sidebar navbar-nav\">\n        <li class=\"nav-item active\">\n          <a class=\"nav-link\" href=\"index.html\">\n            <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n            <span>Dashboard</span>\n          </a>\n        </li>\n        <li class=\"nav-item dropdown show\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"pagesDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            <i class=\"fas fa-fw fa-folder\"></i>\n            <span>Pages</span>\n          </a>\n          <div class=\"dropdown-menu show\" aria-labelledby=\"pagesDropdown\">\n            <div *ngIf=\"tipo == 'ADMIN' \"> \n              <h6 class=\"dropdown-header\">Usuarios</h6>\n              <a class=\"dropdown-item\" routerLink=\"/users\" routerLinkActive=\"active\">ver todos</a>\n              <a class=\"dropdown-item\" routerLink=\"/newU\" routerLinkActive=\"active\">Registrar</a>\n              <h6 class=\"dropdown-header\">Citas</h6>\n              <a class=\"dropdown-item\" routerLink=\"/cites\" routerLinkActive=\"active\">Ver todas</a>\n            </div>\n            <div *ngIf=\"tipo == 'MEDIC' \">\n            <h6 class=\"dropdown-header\">Historia Medica y receta</h6>\n            <a class=\"dropdown-item\" routerLink=\"/hist\" routerLinkActive=\"active\">Crear</a>\n            </div>\n          </div>\n        </li><!-- \n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"charts.html\">\n            <i class=\"fas fa-fw fa-chart-area\"></i>\n            <span>Charts</span></a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"tables.html\">\n            <i class=\"fas fa-fw fa-table\"></i>\n            <span>Tables</span></a>\n        </li> -->\n      </ul>\n      <router-outlet></router-outlet>\n</div>\n\t\n\n"
 
 /***/ }),
 
@@ -88,9 +88,6 @@ var AppComponent = /** @class */ (function () {
         if (this.has('user')) {
             var cache = this.getC('user');
             console.log("cache: " + this.has('cache'));
-            _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].TOKEN = cache.TOKEN;
-            _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].user = cache.user;
-            _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].isLog = cache.isLog;
         }
         this.isLog = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].isLog;
     }
@@ -106,7 +103,13 @@ var AppComponent = /** @class */ (function () {
                     user: rs.user, isLog: rs.ok });
                 _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].TOKEN = rs.token;
                 _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].user = rs.user;
-                _this.router.navigate(['/users']);
+                _this.tipo = rs.user.role;
+                if (rs.user.role == 'ADMIN') {
+                    _this.router.navigate(['/users']);
+                }
+                else if (rs.user.role == 'MEDIC') {
+                    _this.router.navigate(['/hist']);
+                }
             }
         });
     };
@@ -186,12 +189,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
 /* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/main/main.component */ "./src/app/components/main/main.component.ts");
 /* harmony import */ var _components_cites_cites_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/cites/cites.component */ "./src/app/components/cites/cites.component.ts");
+/* harmony import */ var _component_histor_histor_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./component/histor/histor.component */ "./src/app/component/histor/histor.component.ts");
+/* harmony import */ var _components_new_histo_new_histo_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/new-histo/new-histo.component */ "./src/app/components/new-histo/new-histo.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -211,6 +218,8 @@ var appRoutes = [
     { path: 'dashboard', component: _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"] },
     { path: 'cites', component: _components_cites_cites_component__WEBPACK_IMPORTED_MODULE_11__["CitesComponent"] },
     { path: 'newU', component: _components_new_user_new_user_component__WEBPACK_IMPORTED_MODULE_5__["NewUserComponent"] },
+    { path: 'hist', component: _component_histor_histor_component__WEBPACK_IMPORTED_MODULE_12__["HistorComponent"] },
+    { path: 'newHist', component: _components_new_histo_new_histo_component__WEBPACK_IMPORTED_MODULE_13__["NewHistoComponent"] },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -222,7 +231,9 @@ var AppModule = /** @class */ (function () {
                 _components_users_users_component__WEBPACK_IMPORTED_MODULE_4__["UsersComponent"],
                 _components_new_user_new_user_component__WEBPACK_IMPORTED_MODULE_5__["NewUserComponent"],
                 _components_main_main_component__WEBPACK_IMPORTED_MODULE_10__["MainComponent"],
-                _components_cites_cites_component__WEBPACK_IMPORTED_MODULE_11__["CitesComponent"]
+                _components_cites_cites_component__WEBPACK_IMPORTED_MODULE_11__["CitesComponent"],
+                _component_histor_histor_component__WEBPACK_IMPORTED_MODULE_12__["HistorComponent"],
+                _components_new_histo_new_histo_component__WEBPACK_IMPORTED_MODULE_13__["NewHistoComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -239,6 +250,98 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/component/histor/histor.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/component/histor/histor.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/component/histor/histor.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/component/histor/histor.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\t\t\t\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50\">\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-59\">\n\t\t\t\t\t\tUsuarios en cita\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div  class=\"wrap-input100 validate-input\" data-validate = \"Valid Horario is required: horaio\">\n\t\t\t\t\t\t<select class=\"input100\" name=\"usuario\" [(ngModel)]=\"usuario\">\n\t\t\t\t\t\t\t<option *ngFor=\"let p of usuarios\" value=\"{{p.name}} {{p._id}}\">{{p.name}}</option>\n\t\t\t\t\t\t</select>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t\t<form class=\"login100-form validate-form\" *ngIf=\"usuario\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-59\">\n\t\t\t\t\t\tHistrorial medico y receta\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input\" data-validate = \"Valid  is required:\">\n\t\t\t\t\t\t<span class=\"label-input100\">Historial</span>\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"historial\" [(ngModel)]=\"historial\" placeholder=\"historial\" >\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t</div>\n<div class=\"wrap-input100 validate-input\" data-validate = \"Valid  is required:\">\n\t\t\t\t\t\t<span class=\"label-input100\">Receta</span>\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"receta\" [(ngModel)]=\"receta\" placeholder=\"receta\" >\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t\t<button (click)=\"registrar()\" class=\"dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30\">\n\t\t\t\t\t\t\tRegistrar\n\t\t\t\t\t\t\t<i class=\"fa fa-long-arrow-right m-l-5\"></i>\n\t\t\t\t\t\t</button>\n\t\t\t\t</form>\n\t\t\t</div>\n\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50\">\n\t\t\t\t\n\t\t\t</div>"
+
+/***/ }),
+
+/***/ "./src/app/component/histor/histor.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/component/histor/histor.component.ts ***!
+  \******************************************************/
+/*! exports provided: HistorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistorComponent", function() { return HistorComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_cites_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/cites.service */ "./src/app/services/cites.service.ts");
+/* harmony import */ var _services_histo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/histo.service */ "./src/app/services/histo.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var HistorComponent = /** @class */ (function () {
+    function HistorComponent(citeS, h) {
+        this.citeS = citeS;
+        this.h = h;
+        this.usuarios = [];
+    }
+    HistorComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.citeS.getCiteMed(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].user._id).then(function (resolve) {
+            var rs = resolve;
+            _this.citas = rs.cites;
+            console.log(rs.cites[0]);
+            _this.citas.forEach(function (item, index) {
+                _this.usuarios.push(item.pacient);
+            });
+        });
+    };
+    HistorComponent.prototype.registrar = function () {
+        var _this = this;
+        console.log(this.usuario.name);
+        this.h.addDatasCite({ historia: this.historial, medic: { name: _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].user.name, _id: _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].user._id },
+            pacient: { name: this.usuario.split(' ')[0], _id: this.usuario.split(' ')[1] } }, { receta: this.receta, medic: { name: _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].user.name, _id: _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].user._id },
+            pacient: { name: this.usuario.split(' ')[0], _id: this.usuario.split(' ')[1] } }).then(function (resolve) {
+            _this.historial = "";
+            _this.receta = "";
+            _this.usuario = "";
+        });
+    };
+    HistorComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-histor',
+            template: __webpack_require__(/*! ./histor.component.html */ "./src/app/component/histor/histor.component.html"),
+            styles: [__webpack_require__(/*! ./histor.component.css */ "./src/app/component/histor/histor.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_cites_service__WEBPACK_IMPORTED_MODULE_1__["CitesService"], _services_histo_service__WEBPACK_IMPORTED_MODULE_2__["HistoService"]])
+    ], HistorComponent);
+    return HistorComponent;
 }());
 
 
@@ -384,6 +487,69 @@ var MainComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], MainComponent);
     return MainComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/new-histo/new-histo.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/components/new-histo/new-histo.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/new-histo/new-histo.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/components/new-histo/new-histo.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  new-histo works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/new-histo/new-histo.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/new-histo/new-histo.component.ts ***!
+  \*************************************************************/
+/*! exports provided: NewHistoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewHistoComponent", function() { return NewHistoComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NewHistoComponent = /** @class */ (function () {
+    function NewHistoComponent() {
+    }
+    NewHistoComponent.prototype.ngOnInit = function () {
+    };
+    NewHistoComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-new-histo',
+            template: __webpack_require__(/*! ./new-histo.component.html */ "./src/app/components/new-histo/new-histo.component.html"),
+            styles: [__webpack_require__(/*! ./new-histo.component.css */ "./src/app/components/new-histo/new-histo.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], NewHistoComponent);
+    return NewHistoComponent;
 }());
 
 
@@ -716,6 +882,15 @@ var CitesService = /** @class */ (function () {
             });
         });
     };
+    CitesService.prototype.getCiteMed = function (id) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.get(_this.url + "/medic/" + id, _this.httpOptions)
+                .subscribe(function (res) {
+                resolve(res);
+            });
+        });
+    };
     CitesService.prototype.deleteCite = function (id) {
         var _this = this;
         console.log('nnn');
@@ -738,6 +913,75 @@ var CitesService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]])
     ], CitesService);
     return CitesService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/histo.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/histo.service.ts ***!
+  \*******************************************/
+/*! exports provided: HistoService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoService", function() { return HistoService; });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var HistoService = /** @class */ (function () {
+    function HistoService(http) {
+        this.http = http;
+        this.urlApi = "https://api-movil.herokuapp.com/api";
+        this.urlLocal = "http://localHost:3000/api";
+        this.url = this.urlApi;
+        this.httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({ 'authorization': "Bearer " + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].TOKEN, 'Content-Type': 'application/json', 'Accept': 'application/json' })
+        };
+    }
+    HistoService.prototype.getHistory = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.get("" + _this.url, _this.httpOptions)
+                .subscribe(function (res) {
+                resolve(res);
+            });
+        });
+    };
+    HistoService.prototype.addDatasCite = function (histo, receta) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.post(_this.url + "/history", histo, _this.httpOptions)
+                .subscribe(function (res) {
+                _this.http.post(_this.url + "/recipe", receta, _this.httpOptions)
+                    .subscribe(function (res) {
+                    resolve(res);
+                });
+            });
+        });
+    };
+    HistoService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]])
+    ], HistoService);
+    return HistoService;
 }());
 
 
@@ -858,7 +1102,8 @@ var environment = {
         name: "",
         lastName: "",
         phone: 0,
-        email: ""
+        email: "",
+        role: ""
     },
     isLog: false
 };

@@ -23,7 +23,7 @@ router.get('/history/:id', (req,res,next)=>{
 router.post('/history',(req,res,next)=>{
 	 var history = req.body;
 
-	if(!history.pacient || !history.medic){
+	if(false){
 		res.status(400).json({
 			error:'in history object'
 		});
