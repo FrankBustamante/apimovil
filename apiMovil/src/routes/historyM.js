@@ -14,7 +14,7 @@ router.get('/history',(req,res, next) =>{
 });
 
 router.get('/history/:id', (req,res,next)=>{
-	db.historys.findOne({_id: mongojs.ObjectId(req.params.id)}, (err,history)=>{
+	db.historys.findOne({"pacient._id": (req.params.id)}, (err,history)=>{
 		if(err) return next(err);
 		res.status(200).json(history);
 	});
