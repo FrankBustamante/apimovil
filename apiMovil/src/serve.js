@@ -15,7 +15,7 @@ const recipesRoutes = require('./routes/recipes');
 
 // settings
 //app.set('views', path.join(__dirname, 'views'));
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4200);
 app.engine('html', require('ejs').renderFile);
 app.set('view engines','ejs');
 
