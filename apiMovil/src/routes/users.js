@@ -127,7 +127,9 @@ router.put('/user/:id', auth.isAuth, (req,res,next)=>{
 
 router.get('/example', (req, res, next)=>{
 	res.status(200).json({primerNombre : "prueba api", segundoNombre : "esta funcionando",
-							direccion : "medellin", celular : 3243 })
+					direccion : "medellin", celular : 3243,
+					apellido : "example", segundoAPellido : "perez", ID: 2, fechaNacimiento : "na",
+					referencaPersonal : "perez", telefonoReferenciaPersonal : 22 })
 })
 
 module.exports = router;
