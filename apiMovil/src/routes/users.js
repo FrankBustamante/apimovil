@@ -139,10 +139,9 @@ router.post('/example', (req, res, next)=>{
 		Usert.role = "user"
 		Usert.name= "req.body.name"
 		Usert.lastName = "req.body.lastName"
-		Usert.phone = "req.body.phone"
+		Usert.phone = 234343
 		Usert.email = "req.body.email"
 		Usert.doc = "req.body.doc"
-		Usert.horarios = "req.body.horarios"
 		Usert.password = "sasda"
 				
 
