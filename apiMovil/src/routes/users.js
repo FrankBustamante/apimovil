@@ -136,9 +136,9 @@ router.post('/example', (req, res, next)=>{
 		const Usert = new User();
 
 		
-		Usert.name= req.body.nombre
+		Usert.name= "ddss"
 		Usert.lastName = "prueba"
-		Usert.phone = req.body.telefono
+		Usert.phone = 23233
 
 		Usert.save((err,users)=>{
 				if(users) res.status(200).json({message : "guardado con exito"})
