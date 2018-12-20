@@ -136,12 +136,12 @@ router.post('/example', (req, res, next)=>{
 		const Usert = new User();
 
 		
-		Usert.role = "user"
-		Usert.name= "req.body.name"
-		Usert.lastName = "req.body.lastName"
+		
+		Usert.name= "rasddasdaa"
+		Usert.lastName = "asdaasdasd"
 		Usert.phone = 234343
-		Usert.email = "req.body.email"
-		Usert.doc = "req.body.doc"
+		Usert.email = "example@dfadas"
+		Usert.doc = "12332112"
 		Usert.password = "sasda"
 				
 
