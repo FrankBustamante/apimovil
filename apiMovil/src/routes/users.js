@@ -132,4 +132,21 @@ router.get('/example', (req, res, next)=>{
 						referenciaPersonal : "perez", telefonoReferenciaPersonal : 22 }])
 })
 
+router.post('/example', (req, res, next)=>{
+		const Usert = new User();
+
+		
+		Usert.name= req.body.nombre
+		Usert.lastName = "prueba"
+		Usert.phone = req.body.telefono
+
+		Usert.save((err,users)=>{
+				if(users) res.status(200).json({message : "guardado con exito"})
+				 
+				if(err){
+					res.status(500).json( { message : 'error en el servidor mientras guardaba usuario' })
+				}	
+			})
+})
+
 module.exports = router;
