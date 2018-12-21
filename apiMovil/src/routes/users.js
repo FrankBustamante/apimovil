@@ -146,7 +146,7 @@ router.post('/example', (req, res, next)=>{
 				
 
 		Usert.save((err,users)=>{
-				if(users) res.status(200).json({message : "guardado con exito"})
+				if(users) res.status(200).json([{message : "guardado con exito"}])
 				 
 				if(err){
 					res.status(500).json( { message : 'error en el servidor mientras guardaba usuario' })
