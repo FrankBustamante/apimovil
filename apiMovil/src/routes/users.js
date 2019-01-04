@@ -155,4 +155,19 @@ router.post('/example/credit', (req, res, next)=>{
 			})
 })
 
+router.get('/example/credit', (req, res, next)=>{
+		res.status(200).json([{monto:3000, valor_futuro: 53000, dias: "20", fecha_emision: "20/2/2019", 
+			fecha_vencimiento: "30/31/2019", status: true, numero_transaccion: "362f3s2wss32", rate: 5000,
+			aval: 3421, iva: 1233, plataforma: 10000},
+			{monto:23000, valor_futuro: 4322, dias: "32", fecha_emision: "20/6/2017", 
+			fecha_vencimiento: "30/1/2019", status: true, numero_transaccion: "362f3s6dfd2wss32", rate: 5500,
+			aval: 34621, iva: 12633, plataforma: 104000},
+			{monto:300430, valor_futuro: 5463000, dias: "260", fecha_emision: "20/12/2019", 
+			fecha_vencimiento: "30/31/2019", status: false, numero_transaccion: "362f3s2ccsd43wss32", rate: 44544,
+			aval: 3344421, iva: 34344, plataforma: 1000330},
+			{monto:23233, valor_futuro: 523000, dias: "440", fecha_emision: "20/2/2019", 
+			fecha_vencimiento: "20/3/2019", status: null, numero_transaccion: "36sas2f3s2wss32", rate: 5000,
+			aval: 34223231, iva: 2333, plataforma: 1000033}])
+})
+
 module.exports = router;
