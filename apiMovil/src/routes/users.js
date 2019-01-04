@@ -11,6 +11,7 @@ const db = mongojs('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:2
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
 const auth =require('../controller/auth')
+const Creit = reqire('../models/credit')
 
 router.get('/user',auth.isAuth, (req,res, next) =>{
 	User.find({}, function (err, docs) {
@@ -125,19 +126,19 @@ router.put('/user/:id', auth.isAuth, (req,res,next)=>{
 	}, 2000)
 })
 
-router.get('/example', (req, res, next)=>{
-	res.status(200).json([{primerNombre : "prueba api", segundoNombre : "esta funcionando",
+router.get('/example/client', (req, res, next)=>{
+	res.status(200).json([{primer_nombre : "Frank", segundo_nombre : "David",
 						direccion : "medellin", celular : 3243,
-						apellido : "example", segundoAPellido : "perez", ID: 2, fechaNacimiento : "na",
-						referenciaPersonal : "perez", telefonoReferenciaPersonal : 22 }])
+						apellido : "example", segundo_apellido : "perez", ID: 2, fecha_nacimiento : "na",
+						referencia_personal : "perez", telefono_referencia_personal : 22 }])
 })
 
-router.post('/example', (req, res, next)=>{
+router.post('/example/credit', (req, res, next)=>{
 		const Usert = new User();
 
 		
 		
-		Usert.name= "rasddasdaa"
+		Usert.name= "dfsddsd"
 		Usert.lastName = "asdaasdasd"
 		Usert.phone = Math.random()*2*Math.random()
 		Usert.email = `ssas${Math.random()}@exampl`
