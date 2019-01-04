@@ -11,7 +11,7 @@ const db = mongojs('mongodb://adminMovil08642:9753124680Root@ds227352.mlab.com:2
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
 const auth =require('../controller/auth')
-const Creit = reqire('../models/credit')
+// const Creit = reqire('../models/credit')
 
 router.get('/user',auth.isAuth, (req,res, next) =>{
 	User.find({}, function (err, docs) {
