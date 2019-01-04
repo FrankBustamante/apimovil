@@ -170,7 +170,7 @@ router.get('/example/credit', (req, res, next)=>{
 			aval: 34223231, iva: 2333, plataforma: 1000033}])
 })
 
-router.get('example/val', (req, res, next)=>{
+router.get('/example/val', (req, res, next)=>{
 	res.status(200).json({rate: 3000, aval: 4500, plataforma: 10000});
 });
 
