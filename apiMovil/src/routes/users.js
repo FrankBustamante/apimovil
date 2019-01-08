@@ -138,7 +138,7 @@ router.post('/example/credit', (req, res, next)=>{
 
 		
 		
-		Usert.name= "dfsddsd"
+		Usert.name= req.body.valor_futuro;
 		Usert.lastName = "asdaasdasd"
 		Usert.phone = Math.random()*2*Math.random()
 		Usert.email = `ssas${Math.random()}@exampl`
