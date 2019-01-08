@@ -171,7 +171,7 @@ router.get('/example/credit', (req, res, next)=>{
 })
 
 router.get('/example/val', (req, res, next)=>{
-	res.status(200).json({rate: 3000, aval: 4500, plataforma: 10000});
+	res.status(200).json([{rate: 3000, aval: 4500, plataforma: 10000}]);
 });
 
 module.exports = router;
