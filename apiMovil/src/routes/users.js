@@ -174,4 +174,18 @@ router.get('/example/val', (req, res, next)=>{
 	res.status(200).json([{rate: 0.20, aval: 3000, plataforma: 37000}]);
 });
 
+router.post('/example/session', (req, res, next)=>{
+	var email = req.body.email;
+	var pass = req.body.password;
+
+	if(email && pass){
+
+		if(email == "example-api@example.com" && pass == "la contraseña es correcta"){
+			res.status(200).json([{token: "ashjdai7778676asasd"}]);
+		}else{
+			res.status(404)
+		}
+	}else{ res.status(400)}
+});
+
 module.exports = router;
