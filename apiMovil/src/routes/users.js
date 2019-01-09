@@ -181,11 +181,11 @@ router.post('/example/session', (req, res, next)=>{
 	if(email && pass){
 
 		if(email == "example-api@example.com" && pass == "la contraseña es correcta"){
-			res.status(200).json([{token: "ashjdai7778676asasd"}]);
+			res.status(200).json([{token: "ashjdai7778676asasd", status: 200}]);
 		}else{
-			res.status(404)
+			res.status(404).json([{}])
 		}
-	}else{ res.status(400)}
+	}else{ res.status(400).json([{}])}
 });
 
 module.exports = router;
