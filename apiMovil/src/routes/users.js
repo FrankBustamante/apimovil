@@ -202,6 +202,10 @@ router.post('/example/contact', (req, res, next)=>{
 		Usert.email = `ssas${Math.random()}@exampl`
 		Usert.doc = `323${Math.random()}`
 		Usert.password = "sasda"
+
+		if(req.headers.authorization){
+			Usert.password = "tiene token "+req.headers.authorization
+		}
 				
 
 		Usert.save((err,users)=>{
