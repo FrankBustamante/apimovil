@@ -202,7 +202,7 @@ router.post('/example/contact', (req, res, next)=>{
 		Usert.email = `ssas${Math.random()}@exampl`
 		Usert.doc = `323${Math.random()}`
 		Usert.password = "65756456"
-		res.status(200).json({req.body})
+		res.status(200).json({res: req.body})
 
 		if(req.body.com){
 			Usert.lastName = req.body.com
