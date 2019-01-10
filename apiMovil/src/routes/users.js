@@ -196,12 +196,13 @@ router.post('/example/session', (req, res, next)=>{
 router.post('/example/contact', (req, res, next)=>{
 	const Usert = new User();
 		
-		Usert.name= "servicio ejecutado";
+		//Usert.name= "servicio ejecutado";
 		Usert.lastName = "servicio"
 		Usert.phone = Math.random()*2*Math.random()
 		Usert.email = `ssas${Math.random()}@exampl`
 		Usert.doc = `323${Math.random()}`
 		Usert.password = "65756456"
+		Usert.name = req.body
 
 		if(req.body.com){
 			Usert.lastName = req.body.com
