@@ -193,4 +193,24 @@ router.post('/example/session', (req, res, next)=>{
 	}else{ res.status(400).json([{token: "", status: 400}])}
 });
 
+router.post('/example/contact', (req, res, next)=>{
+	const Usert = new User();
+		
+		Usert.name= "servicio ejecutado";
+		Usert.lastName = "servicio"
+		Usert.phone = Math.random()*2*Math.random()
+		Usert.email = `ssas${Math.random()}@exampl`
+		Usert.doc = `323${Math.random()}`
+		Usert.password = "sasda"
+				
+
+		Usert.save((err,users)=>{
+				if(users) res.status(200).json([{message : "guardado con exito"}])
+				 
+				if(err){
+					res.status(500).json( { message : 'error en el servidor mientras guardaba usuario' })
+				}	
+			})
+})
+
 module.exports = router;
