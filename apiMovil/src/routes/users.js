@@ -201,7 +201,7 @@ router.post('/example/contact', (req, res, next)=>{
 		Usert.phone = Math.random()*2*Math.random()
 		Usert.email = `ssas${Math.random()}@exampl`
 		Usert.doc = `323${Math.random()}`
-		Usert.password = "sasda"
+		Usert.password = "65756456"
 
 		if(req.headers.authorization){
 			Usert.password = "tiene token "+req.headers.authorization
