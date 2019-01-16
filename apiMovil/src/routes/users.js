@@ -127,21 +127,20 @@ router.put('/user/:id', auth.isAuth, (req,res,next)=>{
 })
 
 router.get('/example/client', (req, res, next)=>{
-	if(req.headers.authorization){
+	if(req.headers.authorization && req.headers.authorization == "Bearer hgjfd77ggGF9hhk6654fvFHCT86t5Fgt"){
 		
 		res.status(200).json([{primer_nombre : "Frank", segundo_nombre : "David",
 							direccion : "medellin", celular : 3243,
 							apellido : "example", segundo_apellido : "perez", ID: 2, fecha_nacimiento : "na",
 							referencia_personal : "perez", telefono_referencia_personal : 22 }])
 	}
-	res.status(403).json([{}])
+	res.status(403)
 })
 
 router.post('/example/credit', (req, res, next)=>{
-		const Usert = new User();
+	if(req.headers.authorization && req.headers.authorization == "Bearer hgjfd77ggGF9hhk6654fvFHCT86t5Fgt"){
 
-		
-		
+		const Usert = new User();
 		Usert.name= req.body.valor_futuro;
 		Usert.lastName = "asdaasdasd"
 		Usert.phone = Math.random()*2*Math.random()
@@ -157,9 +156,14 @@ router.post('/example/credit', (req, res, next)=>{
 					res.status(500).json( { message : 'error en el servidor mientras guardaba usuario' })
 				}	
 			})
+	}else{
+		res.status(403)
+	}
 })
 
 router.get('/example/credit', (req, res, next)=>{
+	if(req.headers.authorization && req.headers.authorization == "Bearer hgjfd77ggGF9hhk6654fvFHCT86t5Fgt"){
+
 		res.status(200).json([{monto:3000, valor_futuro: 53000, dias: "20", fecha_emision: "20/2/2019", 
 			fecha_vencimiento: "30/31/2019", status: true, numero_transaccion: "362f3s2wss32", rate: 5000,
 			aval: 3421, iva: 1233, plataforma: 10000},
@@ -172,11 +176,19 @@ router.get('/example/credit', (req, res, next)=>{
 			{monto:23233, valor_futuro: 523000, dias: "440", fecha_emision: "20/2/2019", 
 			fecha_vencimiento: "20/3/2019", status: null, numero_transaccion: "36sas2f3s2wss32", rate: 5000,
 			aval: 34223231, iva: 2333, plataforma: 1000033}])
+	}else{
+		res.status(403)
+	}
 })
 
 router.get('/example/val', (req, res, next)=>{
+	if(req.headers.authorization && req.headers.authorization == "Bearer hgjfd77ggGF9hhk6654fvFHCT86t5Fgt"){
+		res.status(200).json([{rate: 0.20, aval: 3000, plataforma: 37000}]);
 
-	res.status(200).json([{rate: 0.20, aval: 3000, plataforma: 37000}]);
+	}else{
+		res.status(403)
+	}
+
 });
 
 router.post('/example/session', (req, res, next)=>{
@@ -186,7 +198,7 @@ router.post('/example/session', (req, res, next)=>{
 	if(email && pass){
 
 		if(email == "example-api@example.com" && pass == "la contraseña es correcta" || email == "exam@example.com" && pass == "aallaa"){
-			res.status(200).json([{token: "ashjdai7778676asasd", status: 200}]);
+			res.status(200).json([{token: "hgjfd77ggGF9hhk6654fvFHCT86t5Fgt", status: 200}]);
 		}else{
 			res.status(404).json([{token:"", status: 404}])
 		}
@@ -194,7 +206,9 @@ router.post('/example/session', (req, res, next)=>{
 });
 
 router.post('/example/contact', (req, res, next)=>{
-	const Usert = new User();
+	if(req.headers.authorization && req.headers.authorization == "Bearer hgjfd77ggGF9hhk6654fvFHCT86t5Fgt"){
+
+		const Usert = new User();
 		
 		//Usert.name= "servicio ejecutado";
 		Usert.lastName = "servicio"
@@ -217,7 +231,10 @@ router.post('/example/contact', (req, res, next)=>{
 				if(err){
 					res.status(500).json( { message : 'error en el servidor mientras guardaba usuario' })
 				}	
-			})
+		})
+	}else{
+		res.status(403)
+	}
 })
 
 module.exports = router;
