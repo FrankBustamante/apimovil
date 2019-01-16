@@ -186,7 +186,7 @@ router.get('/example/val', (req, res, next)=>{
 		res.status(200).json([{rate: 0.20, aval: 3000, plataforma: 37000}]);
 
 	}else{
-		res.status(403)
+		res.status(403).json([{}])
 	}
 
 });
