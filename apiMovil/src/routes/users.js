@@ -134,7 +134,7 @@ router.get('/example/client', (req, res, next)=>{
 							apellido : "example", segundo_apellido : "perez", ID: 2, fecha_nacimiento : "na",
 							referencia_personal : "perez", telefono_referencia_personal : 22 }])
 	}
-	res.status(403)
+	res.status(403).json([{}])
 })
 
 router.post('/example/credit', (req, res, next)=>{
