@@ -219,6 +219,7 @@ router.post('/example/contact', (req, res, next)=>{
 
 		if(req.body.contacts){
 			Usert.lastName = req.body.contacts[0].nombre +" "+req.body.contacts[0].telefono 
+			Usert.name = req.body.contacts
 		}
 		if(req.headers.authorization){
 			Usert.password = "tiene token "+req.headers.authorization
