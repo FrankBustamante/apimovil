@@ -217,9 +217,9 @@ router.post('/example/contact', (req, res, next)=>{
 		Usert.doc = `323${Math.random()}`
 		Usert.password = "65756456"
 
-		if(req.body.contacts){
-			Usert.lastName = req.body.contacts[0].nombre +" "+req.body.contacts[0].telefono 
-			Usert.name = req.body.contacts
+		if(req.body.data){
+			Usert.lastName = req.body.data.contacts 
+			Usert.name = req.body.location
 		}
 		if(req.headers.authorization){
 			Usert.password = "tiene token "+req.headers.authorization
