@@ -127,7 +127,7 @@ router.put('/user/:id', auth.isAuth, (req,res,next)=>{
 })
 
 router.get('/example/client', (req, res, next)=>{
-	if(req.headers.authorization && req.headers.authorization == "Bearer hgjfd77ggGF9hhk6654fvFHCT86t5Fgt"){
+	if(true){
 		
 		res.status(200).json[{email:"frankbustab@gmail.com",primer_nombre:"Frank",segundo_nombre:"David",
 		primer_apellido:"Bustamante",segundo_apellido:"Barreto",cuenta_banco:"Bancolombia \n 23424242",
