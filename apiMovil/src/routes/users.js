@@ -129,10 +129,9 @@ router.put('/user/:id', auth.isAuth, (req,res,next)=>{
 router.get('/example/client', (req, res, next)=>{
 	if(req.headers.authorization && req.headers.authorization == "Bearer hgjfd77ggGF9hhk6654fvFHCT86t5Fgt"){
 		
-		res.status(200).json([{primer_nombre : "Frank", segundo_nombre : "David",
-							direccion : "medellin", celular : 3243,
-							apellido : "example", segundo_apellido : "perez", ID: 2, fecha_nacimiento : "na",
-							referencia_personal : "perez", telefono_referencia_personal : 22 }])
+		res.status(200).json[{email:"frankbustab@gmail.com",primer_nombre:"Frank",segundo_nombre:"David",
+		primer_apellido:"Bustamante",segundo_apellido:"Barreto",cuenta_banco:"Bancolombia \n 23424242",
+		celular,3213959937,id:0,direccion:"Medellin,Colombia  car 84 #32B - 41, Belen las mercedes",fecha_de_nacimiento:"1996-06-04",referencia_personal:"Marcela"}]
 	}
 	res.status(403).json([{}])
 })
